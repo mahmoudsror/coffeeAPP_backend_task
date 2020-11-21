@@ -13,5 +13,6 @@ module.exports = async (app)=>{
     app.use(bodyParser.urlencoded({ extended: false }));
 
     await db._connect();
+    require(path.resolve('routes','index.js'))(app);
     require(path.resolve('seeders','index.js'));
 }
